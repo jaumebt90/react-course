@@ -2,8 +2,11 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const submit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <form>
+    <form onSubmit={submit}>
       <div>
         <span>lala</span>
         <input name="campo" />
