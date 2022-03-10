@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
+/* import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   const submit = (e) => {
     e.preventDefault();
     const data = Array.from(new FormData(e.target));
-    console.log(Object.fromEntries(data));
   };
   return (
     <form onSubmit={submit}>
@@ -19,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
