@@ -19,6 +19,14 @@ const App = () => {
         onChange={handleChange}
       />
       <textarea name="texto" onChange={handleChange} value={value.texto} />
+
+      <select>
+        <option value="">-- Seleccione --</option>
+        <option value="chanchofeliz">Chancho feliz</option>
+        <option value="chanchitofeliz">Chanchito feliz</option>
+        <option value="chanchitotriste">Chnachito triste</option>
+        <option value="felipe">Felipe</option>
+      </select>
     </div>
   );
 };
