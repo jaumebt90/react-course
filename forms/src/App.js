@@ -4,11 +4,13 @@ const App = () => {
   const [value, setValue] = useState({
     normal: "por defecto",
     texto: "",
+    select: "",
+    check: false,
   });
-  const handleChange = (e) => {
+  const handleChange = ({ target }) => {
     setValue({
       ...value,
-      [e.target.name]: e.target.value,
+      [target.name]: target.type === "checkbox" ? target.checked : target.value,
     });
   };
   console.log(value);
@@ -30,6 +32,12 @@ const App = () => {
         <option value="chanchitotriste">Chnachito triste</option>
         <option value="felipe">Felipe</option>
       </select>
+      <input
+        type="checkbox"
+        name="check"
+        onChange={handleChange}
+        checked={value.check}
+      />
     </div>
   );
 };
