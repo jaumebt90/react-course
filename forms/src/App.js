@@ -3,10 +3,10 @@ import { useState } from "react";
 const App = () => {
   const [value, setValue] = useState({
     normal: "por defecto",
-    texto: "",
+    texto: "escribe algo",
     select: "",
     check: false,
-    estado: "feliz",
+    estado: "",
   });
   const handleChange = ({ target }) => {
     setValue({
