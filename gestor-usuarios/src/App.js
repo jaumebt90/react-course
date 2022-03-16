@@ -13,8 +13,9 @@ function App() {
     <div style={{ marginTop: "15%" }}>
       <Container>
         <Card>
-          <div style={{ padding: 20 }}></div>
-          <UserForm submit={submit} />
+          <div style={{ padding: 20 }}>
+            <UserForm submit={submit} />
+          </div>
         </Card>
         <Card>
           <ul>
