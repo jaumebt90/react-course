@@ -10,7 +10,12 @@ function App() {
   };
   return (
     <form>
-      <input name="name" placeholder="Nombre" value={formulario.name} />
+      <input
+        name="name"
+        placeholder="Nombre"
+        value={formulario.name}
+        onChange={handleChange}
+      />
     </form>
   );
 }
