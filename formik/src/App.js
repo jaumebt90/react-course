@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import TextInput from "./components/TextInput";
 
 const validate = (values) => {
   const errors = {};
@@ -26,26 +27,26 @@ function App() {
       validate={validate}
       onSubmit={(values) => console.log(values)}
     >
-      {(formik) => (
-        <Form onSubmit={formik.handleSubmit}>
-          <label>Nombre</label>
-          <Field name="name" type="text" className="input" />
-          <Field name="name" as="select" className="input">
-            <option value="chanchitofeliz">Chanchito feliz</option>
-          </Field>
-          <ErrorMessage name="name" />
-          <br />
-          <label>Apellido</label>
-          <Field name="lastname" type="text" />
-          <ErrorMessage name="lastname" />
-          <br />
-          <label>Email</label>
-          <Field name="email" type="email" />
-          <ErrorMessage name="email" />
-          <br />
-          <button type="submit">Enviar</button>
-        </Form>
-      )}
+      <Form>
+        <TextInput name="nombre" label="Nombre" />
+        <label>Nombre</label>
+        <Field name="name" type="text" className="input" />
+        <Field name="select" as="select" className="input">
+          <option value="chanchitofeliz">Chanchito feliz</option>
+          <option value="chanchitofeli">Chanchito feliz</option>
+        </Field>
+        <ErrorMessage name="name" />
+        <br />
+        <label>Apellido</label>
+        <Field name="lastname" type="text" />
+        <ErrorMessage name="lastname" />
+        <br />
+        <label>Email</label>
+        <Field name="email" type="email" />
+        <ErrorMessage name="email" />
+        <br />
+        <button type="submit">Enviar</button>
+      </Form>
     </Formik>
   );
 }
