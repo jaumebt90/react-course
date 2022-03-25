@@ -18,20 +18,21 @@ function App() {
         onChange={formik.handleChange}
         value={formik.values.name}
       />
-      <label>Nombre</label>
+      <label>Apellido</label>
       <input
-        name="name"
+        name="lastname"
         type="text"
         onChange={formik.handleChange}
-        value={formik.values.name}
+        value={formik.values.lastname}
       />
-      <label>Nombre</label>
+      <label>Email</label>
       <input
-        name="name"
-        type="text"
+        name="email"
+        type="email"
         onChange={formik.handleChange}
-        value={formik.values.name}
+        value={formik.values.email}
       />
+      <button type="submit">Enviar</button>
     </form>
   );
 }
