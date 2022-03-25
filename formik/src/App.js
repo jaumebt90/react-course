@@ -16,6 +16,9 @@ const validate = (values) => {
   } else if (values.lastname.length < 5) {
     errors.lastname = "El apellido muy corto";
   }
+  if (!values.radio) {
+    errors.radio = "Requerido";
+  }
   return errors;
 };
 
@@ -27,6 +30,7 @@ function App() {
         lastname: "",
         email: "",
         chancho: "",
+        radio: "",
       }}
       validate={validate}
       onSubmit={(values) => console.log(values)}
@@ -47,6 +51,7 @@ function App() {
         <Radio name="radio" value="chanchito1" label="chanchito1" />
         <Radio name="radio" value="chanchito2" label="chanchito2" />
         <Radio name="radio" value="chanchito3" label="chanchito3" />
+        <ErrorMessage name="radio" />
         <button type="submit">Enviar</button>
       </Form>
     </Formik>
