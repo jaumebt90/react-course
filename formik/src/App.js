@@ -11,6 +11,8 @@ function App() {
       const errors = {};
       if (!values.name) {
         errors.name = "Requerido";
+      } else if (values.name.length < 5) {
+        errors.name = "Nombre muy corto";
       }
       return errors;
     },
