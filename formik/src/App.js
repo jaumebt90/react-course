@@ -29,7 +29,10 @@ function App() {
       {(formik) => (
         <Form onSubmit={formik.handleSubmit}>
           <label>Nombre</label>
-          <Field name="name" type="text" />
+          <Field name="name" type="text" className="input" />
+          <Field name="name" as="select" className="input">
+            <option value="chanchitofeliz">Chanchito feliz</option>
+          </Field>
           <ErrorMessage name="name" />
           <br />
           <label>Apellido</label>
