@@ -9,7 +9,9 @@ function App() {
     },
     validate: (values) => {
       const errors = {};
-      errors.name = "Rquerido";
+      if (!values.name) {
+        errors.name = "Requerido";
+      }
       return errors;
     },
     onSubmit: (values) => console.log(values),
