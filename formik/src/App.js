@@ -7,6 +7,11 @@ function App() {
       lastname: "",
       email: "",
     },
+    validate: (values) => {
+      const errors = {};
+      errors.name = "Rquerido";
+      return errors;
+    },
     onSubmit: (values) => console.log(values),
   });
   return (
@@ -18,6 +23,8 @@ function App() {
         onChange={formik.handleChange}
         value={formik.values.name}
       />
+      {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+      <br />
       <label>Apellido</label>
       <input
         name="lastname"
@@ -25,6 +32,7 @@ function App() {
         onChange={formik.handleChange}
         value={formik.values.lastname}
       />
+      <br />
       <label>Email</label>
       <input
         name="email"
@@ -32,6 +40,7 @@ function App() {
         onChange={formik.handleChange}
         value={formik.values.email}
       />
+      <br />
       <button type="submit">Enviar</button>
     </form>
   );
