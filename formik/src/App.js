@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import Checkbox from "./components/Checkbox";
 import TextInput from "./components/TextInput";
 import Select from "./components/Select";
+import Radio from "./components/Radio";
 
 const validate = (values) => {
   const errors = {};
@@ -43,6 +44,9 @@ function App() {
           <option value="chanchitotriste">chanchito triste</option>
         </Select>
         <Checkbox name="accept">Aceptar terminos y condiciones</Checkbox>
+        <Radio name="radio" value="chanchito1" label="chanchito1" />
+        <Radio name="radio" value="chanchito2" label="chanchito2" />
+        <Radio name="radio" value="chanchito3" label="chanchito3" />
         <button type="submit">Enviar</button>
       </Form>
     </Formik>
