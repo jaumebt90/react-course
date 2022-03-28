@@ -13,3 +13,10 @@ header {
   z-index: 2;
   position: relative;
 }
+
+header input {
+  outline: none;
+  border: solid 1px #eee;
+  padding: 10px 5px;
+  border-radius: 4px;
+}
