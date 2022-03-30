@@ -40,6 +40,14 @@ const Link = ({ className, ...props }) => {
 const StyledLink = styled(Link)`
   color: blue;
 `;
+
+const Input = styled.input.attrs((props) => ({
+  type: "text",
+  color: props.color || "red",
+}))`
+  font-size: 20px;
+  border: 1px solid red;
+`;
 function App() {
   return (
     <Content>
@@ -55,6 +63,7 @@ function App() {
       <BlockButton primary>Enviar</BlockButton>
       <Link>Link</Link>
       <StyledLink>Link con estilo</StyledLink>
+      <Input />
     </Content>
   );
 }
