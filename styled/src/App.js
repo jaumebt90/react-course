@@ -1,3 +1,4 @@
+import { keyframes } from "styled-components";
 import styled from "styled-components";
 
 const P = styled.p`
@@ -47,6 +48,25 @@ const Input = styled.input.attrs((props) => ({
 }))`
   font-size: 20px;
   border: 1px solid red;
+  color: ${(props) => props.color};
+`;
+
+const Password = styled(Input).attrs({
+  type: "password",
+})``;
+
+const girar = keyframes`
+from{
+  transform:rotate(0deg);
+}
+to{
+  transform:rotate(360deg);
+}
+`;
+
+const Rotar = styled.div`
+  display: inline-block;
+  animation: ${girar} 2s linear infinite;
 `;
 function App() {
   return (
@@ -63,7 +83,10 @@ function App() {
       <BlockButton primary>Enviar</BlockButton>
       <Link>Link</Link>
       <StyledLink>Link con estilo</StyledLink>
-      <Input />
+      <Input color="blue" />
+      <Password />
+      <br />
+      <Rotar>Estoy girando</Rotar>
     </Content>
   );
 }
