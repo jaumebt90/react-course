@@ -18,12 +18,18 @@ const MyInput = styled.input`
   width: 100%;
   margin-bottom: 5px;
 `;
+const ErrorMessage = styled.div`
+  color: #f00;
+`;
 const Input = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <Control>
       <Label>{label}</Label>
       <MyInput {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <ErrorMessage>{meta.error}</ErrorMessage>
+      ) : null}
     </Control>
   );
 };
