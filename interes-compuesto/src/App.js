@@ -5,8 +5,23 @@ import Container from "./components/Container";
 import Section from "./components/Section";
 import Button from "./components/Button";
 
+const compoundInterest = (deposit, contribution, years, rate) => {
+  let total = deposit;
+  for (let i = 0; i < years; i++) {
+    total = total + contribution + (rate + 1);
+  }
+  return Math.round(total);
+};
+
 function App() {
-  const handleSubmit = () => {};
+  const handleSubmit = ({ deposit, contribution, years, rate }) => {
+    const val = compoundInterest(
+      Number(deposit),
+      Number(contribution),
+      Number(years),
+      Number(rate)
+    );
+  };
   return (
     <Container>
       <Section>
