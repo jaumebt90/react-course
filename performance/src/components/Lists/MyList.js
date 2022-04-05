@@ -1,24 +1,20 @@
-const Li = ({ fullname }) => {
-  console.log(`renderizando ${fullname}`)
-  return (
-    <li>
-      {fullname}
-    </li>
-  )
-}
+import { memo } from "react";
 
+const Li = ({ fullname }) => {
+  console.log(`renderizando ${fullname}`);
+  return <li>{fullname}</li>;
+};
+
+const MLi = memo(Li);
 const MyList = ({ data }) => {
-  console.log('renderizando lista')
+  console.log("renderizando lista");
   return (
     <ul>
-      {data.map(x =>
-        <Li
-          key={x.name + x.lastname}
-          fullname={`${x.name} ${x.lastname}`}
-        />
-      )}
+      {data.map((x) => (
+        <MLi key={x.name + x.lastname} fullname={`${x.name} ${x.lastname}`} />
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default MyList
+export default MyList;
