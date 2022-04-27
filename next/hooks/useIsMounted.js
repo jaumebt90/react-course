@@ -11,9 +11,7 @@ const useIsMounted = () => {
     }
   }, [router.isReady]);
 
-  if (!loaded) {
-    return null;
-  }
+  return loaded;
 };
 
 export default useIsMounted;
