@@ -1,7 +1,16 @@
+const Pokemon = ({ pokemon }) => {
+  return <li>{pokemon.name}</li>;
+};
+
 export default function Pokemones({ pokemones }) {
   return (
     <div>
       <p>Pokemon</p>
+      <ul>
+        {pokemones.map((pokemon) => (
+          <Pokemon pokemon={pokemon} key={pokemon.name} />
+        ))}
+      </ul>
     </div>
   );
 }
