@@ -1,6 +1,9 @@
 export default function Pokemones({ pokemones }) {
-  console.log(pokemones);
-  return <p>Pokemon</p>;
+  return (
+    <div>
+      <p>Pokemon</p>
+    </div>
+  );
 }
 
 export const getStaticProps = async () => {
